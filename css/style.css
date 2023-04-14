@@ -1,0 +1,16 @@
+nav {
+  background-color: aliceblue;
+}
+
+nav ul {
+  text-transform: uppercase;
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li a {
+  color: black;
+  font-size: small;
+}
