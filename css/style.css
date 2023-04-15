@@ -9,6 +9,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Condensed", sans-serif;
   align-items: center;
+  min-width: 380px;
 }
 
 section:not(#intro) {
@@ -40,12 +41,6 @@ h2 {
 section#approach {
   color: white;
   text-align: center;
-}
-
-.flex-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
 button {
@@ -98,7 +93,7 @@ nav {
   width: 100px;
   height: 40px;
   position: absolute;
-  right: 48px;
+  right: 12px;
   display: none;
   cursor: pointer;
 }
@@ -231,12 +226,6 @@ div.card-image img#background {
   background-size: cover;
 }
 
-div.card-image img#goals {
-  background: url("https://crowdfavorite.com/wp-content/uploads/2006/09/desirability-feasibility-viability-diagram.gif")
-    center center no-repeat;
-  background-size: cover;
-}
-
 /*-- small Cards for refs*/
 
 .small-card {
@@ -333,5 +322,44 @@ div.card-image img#goals {
   section#connect {
     padding-left: 200px;
     padding-right: 200px;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  #intro h1 {
+    font-size: 4em;
+  }
+  #intro p {
+    font-size: 1.7em;
+  }
+
+  #copytext {
+    max-width: unset;
+    margin-right: unset;
+  }
+
+  .big-card .content {
+    width: unset;
+    max-width: unset;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #intro h1 {
+    font-size: 3em;
+  }
+  #intro p {
+    font-size: 1.3em;
+  }
+  section#about,
+  section#approach,
+  section#clients,
+  section#connect {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .big-card img {
+    padding: 24px 0px 24px 0px;
+    margin: unset;
   }
 }
