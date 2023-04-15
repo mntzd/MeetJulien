@@ -12,11 +12,28 @@ body {
 
 section:not(#intro) {
   padding: 50px 0px;
+  line-height: 1.5em;
+}
+
+section#approach {
+  background: rgb(115, 0, 90);
+  background: linear-gradient(
+    90deg,
+    rgba(115, 0, 90, 1) 0%,
+    rgba(121, 9, 108, 1) 35%,
+    rgba(156, 0, 255, 1) 100%
+  );
 }
 
 p,
 ul {
   font-family: "Roboto";
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 /* -------------------  NAV
@@ -83,6 +100,13 @@ nav li a {
   font-weight: 500;
 }
 
+#navbg {
+  width: 100%;
+  background-color: rgb(138, 138, 138);
+  height: 60px;
+  position: sticky;
+}
+
 /* 
 ---------------- Main
 */
@@ -92,6 +116,7 @@ nav li a {
 
 main {
   padding: 36px;
+  scroll-behavior: smooth;
 }
 
 #intro {
@@ -118,52 +143,87 @@ main {
 #intro p {
   font-size: 2em;
   width: 80%;
-  min-width: 500px;
 }
 
 /* 
 ----- Content
 */
 
-.float-layout {
+#copytext {
   float: left;
   width: 100%;
-  height: auto;
-  box-sizing: border-box;
-  margin: 0;
+  max-width: 800px;
+  margin-right: 48px;
 }
+
+/* 
+-- Cards 1
+*/
 
 .card-container {
   overflow: hidden;
-  max-width: 700px;
-  border-radius: 0px 12px 12px 0px;
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.12);
+  border-radius: 12px 12px 12px 12px;
+  min-width: 360px;
+  max-width: 600px;
 }
 
 .card {
   background-color: rgb(238, 238, 238);
   color: black;
-  min-height: 100%; /*replace this it in width: 100%*/
   width: 75%;
-  float: right;
   padding: 12px 24px;
 }
 
 .card-image {
   display: flex;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.12);
 }
-/*-------------*/
 
 div.card-image img {
   width: 25%;
   height: auto;
-  background: url("/media/self.png") center center no-repeat;
-  background-size: cover;
   border-radius: 12px 0px 0px 12px;
+  min-width: 150px;
 }
 
-/* Phone Devices Query */
+div.card-image img#background {
+  background: url("/media/self.png") center center no-repeat;
+  background-size: cover;
+}
+
+div.card-image img#goals {
+  background: url("https://crowdfavorite.com/wp-content/uploads/2006/09/desirability-feasibility-viability-diagram.gif")
+    center center no-repeat;
+  background-size: cover;
+}
+
+/*-- Big Card?*/
+
+.big-card {
+  background-color: antiquewhite;
+}
+
+/* 
+---------------- Responsive Stuff
+*/
+
 @media only screen and (max-width: 672px) {
+  nav ul {
+    display: none;
+  }
+
+  #burger {
+    display: block;
+  }
+
+  #intro h1 {
+    font-size: 3em;
+  }
+
+  #intro p {
+    font-size: 1.5em;
+  }
+
   div.card-image img {
     width: 100%;
     height: 200px;
@@ -178,19 +238,5 @@ div.card-image img {
   .card {
     width: auto;
     border-radius: 0px 0px 12px 12px;
-  }
-}
-
-/* 
----------------- Responsive Stuff
-*/
-
-@media only screen and (max-width: 672px) {
-  nav ul {
-    display: none;
-  }
-
-  #burger {
-    display: block;
   }
 }
