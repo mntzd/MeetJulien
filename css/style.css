@@ -5,13 +5,14 @@
 }
 
 body {
-  margin: 0px;
+  margin: 0 auto;
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Condensed", sans-serif;
+  align-items: center;
 }
 
 section:not(#intro) {
-  padding: 50px 0px;
+  padding: 50px 48px;
   line-height: 1.5em;
 }
 
@@ -26,8 +27,19 @@ section#approach {
 }
 
 p,
-ul {
+ul,
+ol {
   font-family: "Roboto";
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+section#approach {
+  color: white;
+  text-align: center;
 }
 
 .flex-wrapper {
@@ -36,12 +48,40 @@ ul {
   flex-wrap: wrap;
 }
 
+button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 800;
+  font-family: "Roboto Condensed";
+  float: left;
+  cursor: pointer;
+  background-color: rgb(240, 230, 240);
+}
+
+button.ghost {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+button.ghost:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
 /* -------------------  NAV
 */
 
 nav {
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 12px 36px;
+  top: 0px;
+  padding: 12px;
   height: 36px;
   width: 100%;
   position: fixed;
@@ -50,7 +90,8 @@ nav {
 
 #navIcon {
   float: left;
-  display: block;
+  display: flex;
+  padding-left: 36px;
 }
 
 #burger {
@@ -90,8 +131,8 @@ nav li:hover {
   text-decoration: underline;
 }
 
-nav li:active {
-  font-weight: bold;
+nav li a:active {
+  font-weight: 800;
 }
 
 nav li a {
@@ -115,7 +156,6 @@ nav li a {
 */
 
 main {
-  padding: 36px;
   scroll-behavior: smooth;
 }
 
@@ -123,7 +163,6 @@ main {
   background-image: url(/media/bg3.png);
   background-repeat: no-repeat;
   background-position: center;
-  margin: -36px -36px 0 -36px;
 }
 
 #hero {
@@ -131,8 +170,9 @@ main {
     rgba(81, 91, 223, 0.8) 25%,
     rgba(212, 55, 152, 0.7)
   );
-  padding: 15% 10%;
+  padding: 13% 48px;
   max-height: 400px;
+  min-height: 200px;
 }
 
 #intro h1 {
@@ -197,10 +237,55 @@ div.card-image img#goals {
   background-size: cover;
 }
 
-/*-- Big Card?*/
+/*-- small Cards for refs*/
+
+.small-card {
+  background-color: rgb(240, 240, 240);
+  width: 300px;
+  margin: 0px 16px 16px 0px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.small-card img {
+  object-fit: contain;
+  width: 200px;
+  height: 80px;
+  margin: 12px;
+}
+
+.small-card:hover {
+  box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.18);
+  background-color: rgb(230, 230, 230);
+}
+
+/*-- big Cards for process*/
+.big-card img {
+  width: 30%;
+  border-radius: 12px;
+  float: left;
+  margin: 24px;
+  min-width: 360px;
+}
+
+.big-card .content {
+  float: left;
+  width: 50%;
+  text-align: left;
+  min-width: 360px;
+}
 
 .big-card {
-  background-color: antiquewhite;
+  padding: 24px 0px;
 }
 
 /* 
@@ -238,5 +323,15 @@ div.card-image img#goals {
   .card {
     width: auto;
     border-radius: 0px 0px 12px 12px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  section#about,
+  section#approach,
+  section#clients,
+  section#connect {
+    padding-left: 200px;
+    padding-right: 200px;
   }
 }
