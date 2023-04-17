@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -25,26 +26,16 @@
         <li><a href="/#clients">Clients</a></li>
         <li><a href="/#connect">Connect</a></li>
       </ul>
-      <div id="burger">
-<!--        <svg width="70" height="40" style="stroke:rgb(0, 0, 0); stroke-width:0.1em;">
-          <path class ="p1" d="M 10,10 H 50" />
-          // top line
-          <path class ="p2" d="M 10,20 H 50" />
-          // middle line
-          <path class ="p3" d="M 10,30 H 50" />
-          // bottom line
-        </svg>
--->
-<svg width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="60" height="40"/>
-  <line x1="15" y1="10.5" x2="45" y2="10.5" class="p1"/>
-  <line x1="15" y1="20.5" x2="45" y2="20.5" class="p2"/>
-  <line x1="15" y1="30.5" x2="45" y2="30.5" class="p3"/>
-  <path d="M18.5 8.5C18.5 8.5 40 32 43 33C46 34 44.5 26 50 28C57.2948 30.6526 57.5 10.5 45 10.5C38.5 10.5 15 10.5 15 10.5" class="p4"/>
-  <path d="M18.5 32.5C18.5 32.5 40 8.99999 43 7.99999C46 6.99999 44.5 15 50 13C57.2948 10.3474 57.5 30.5 45 30.5C38.5 30.5 15 30.5 15 30.5" class="p5"/>
-  </svg>
-  
-      </div>
+      <button class="burger" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'));this.parentElement.classList.toggle('mobile')" aria-label="Main Menu">
+          <svg width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="60" height="40"/>
+            <!--  <line x1="15" y1="10.5" x2="45" y2="10.5" class="line p1"/> -->
+            <line x1="15" y1="20.5" x2="45" y2="20.5" class="line p2"/>
+            <!--  <line x1="15" y1="30.5" x2="45" y2="30.5" class="line p3"/> -->
+            <path d="M18.5 8.5C18.5 8.5 40 32 43 33C46 34 44.5 26 50 28C57.2948 30.6526 57.5 10.5 45 10.5C38.5 10.5 15 10.5 15 10.5" class="line p4"/>
+            <path d="M18.5 32.5C18.5 32.5 40 8.99999 43 7.99999C46 6.99999 44.5 15 50 13C57.2948 10.3474 57.5 30.5 45 30.5C38.5 30.5 15 30.5 15 30.5" class="line p5"/>
+            </svg>
+      </button>
     </nav>
 
 
@@ -66,21 +57,20 @@
         <div class="wrapper">
         <div id="copytext">
           <h3>Why do I want to code?</h3>
-        <p>During my studies of psychology I was contemplating how could I combine my interest and academic background revolving around the human psyche with my passion and fascination for technology?
+        <p>During my studies of psychology I was contemplating how could I combine my interest and academic background revolving around the human psyche with my passion and fascination for technology? I tried to learn basic concepts by myself, but programming is hard and my studies kept my busy.
           <br>
           During the early 2010's, I was lucky enough to be an intern for a professor of "Human Computer Interaction" (HCI) and "Mobile Information Systems". The internship was tough and I fucked up on multiple occasions, but it helped me grow my interest and knowledge into the [for psychologists] niche direction of Usability and User Experience Design.
           <br>
           Digging deeper and deeper into the field of HCI & UX, I began to plan my thesis around a data-driven behaviour analysis of car-drivers and ended up partnering with TomTom to optimize specific issues in their product. 
-          The navigation system's algorithm produced an usability issue in certain situations, so I analyzed human problem solving strategies in similar situations and re-applied them on the algorithm.
+          The navigation system's algorithm produced an usability issue in certain situations, so I analyzed human problem solving strategies in similar situations and re-applied them on the algorithm. Up to this point all my work was conceptual, since I still did not know how to properly apply programming and technical analysis to solve complex problems. 
           </p>
           <p>
-          7 years ago I started working as a junior UX Designer in one of Berlins Product Agencies. The demand was there, not only for UX but also for Product Owners (POs), so the next logical thing after working for a few months as UX-Designer was to additionally get certified as PO.
-          <br>
+          7 years ago I started working as a junior UX Designer in one of Berlins Product Agencies. The demand was there, not only for UX but also for Product Owners (POs), so the next logical thing after working for a few months as UX-Designer was to additionally get certified as PO. As part of a Development Team we developed multiple cool things, and I was constantly amazed by the things our code-magicians could do to create some ~real~ value.          <br>
           During the first 2 years in the agency my learning curve skyrocketed (and I loved it) but unfortunately we grew too big too fast and our biggest client pulled out. So the agency closed its doors for good. This was when a former colleague, who was building a design & prodcut consulting team for a large international technology consultancy, offered me to check out the consulting world.
         </p>
         <p>
           The shift from product to business, agency to consulting, was tougher than expected, but I eventually adapted. More Workshops and conceptualizations, a large variety of clients and the opportunity to closely interact with our own startup-hub made this a very interesting experience with lots of personal growth and prosperous personal connections.
-          After 2 years though, time was ripe for something new. One of the Big-4 consultancies planned to build a design capability (and Team) in Germany, so I joined as their Lead-UX-Designer. <br>
+          After 2 years though, time was ripe for something new. One of the Big-4 consultancies planned to build a design capability (and Team) in Germany, so I joined as their Lead-UX-Designer. With the projects and programs in the consultancy I was exposed to large tech-projects and could apply my basic techn-skills to build prototypes (along the other conceptual and UX work), but I never even touched the quality then for production level code or features. I wanted to further grow into this direction, but being very busy with prokects, managing a team and the overall culture made that close to impossible.<br>
           The culture was something I have never really been able to adapt to, even after 4 years of working there, but the market access was just something else. Me and another Senior Designer hired more designers and had plenty of interesting projects with a lot of different clients. While we may have had success from a business perspective, the rate of new learnings decreased by the day, since the only thing you will get measured in is money earned. Especially in the large software projects I felt like just being a designer is not sufficient. I wanted to close the gap, to build the bridge between concept and creation. But my job did not allow for that, so I pulled the brakes and will re-focus on what is important to me: exploring new things in life, finding joy through learning and growing.
         </p>
 

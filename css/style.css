@@ -9,7 +9,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Condensed", sans-serif;
   align-items: center;
-  min-width: 380px;
+  min-width: 375px;
 }
 
 section:not(#intro) {
@@ -89,25 +89,6 @@ nav {
   padding-left: 36px;
 }
 
-#burger {
-  width: 100px;
-  height: 40px;
-  position: absolute;
-  right: 12px;
-  display: none;
-  cursor: pointer;
-}
-
-#burger .p1,
-.p2,
-.p3,
-.p4,
-.p5,
-.p6 {
-  stroke-width: 0.1em;
-  stroke: black;
-}
-
 nav ul {
   display: block;
   text-transform: uppercase;
@@ -141,6 +122,10 @@ nav li a {
   background-color: rgb(138, 138, 138);
   height: 60px;
   position: sticky;
+}
+
+nav .burger {
+  display: none;
 }
 
 /* 
@@ -282,13 +267,180 @@ div.card-image img#background {
 */
 
 @media only screen and (max-width: 672px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+
   nav ul {
     display: none;
   }
 
-  #burger {
+  nav.mobile > ul {
+    background-color: white;
+    width: 100%;
+    margin-left: -84px;
+    margin-top: -12px;
+    padding: 240px 48px;
+    height: 1000px;
+    display: block;
+    animation-duration: 1s;
+  }
+
+  nav li {
+    padding: 12px 24px;
     display: block;
   }
+
+  nav button {
+    all: unset;
+  }
+
+  #navIcon {
+    z-index: 2;
+  }
+
+  /* burger menu */
+
+  nav .burger {
+    width: 100px;
+    background-color: transparent;
+    padding: unset;
+    margin: unset;
+    height: 40px;
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    display: unset;
+  }
+
+  .opened {
+  }
+
+  .line {
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .burger .p1,
+  .p2,
+  .p3,
+  .p4,
+  .p5,
+  .p6 {
+    stroke-width: 0.1em;
+    stroke: black;
+  }
+
+  .burger .p2 {
+    stroke-dasharray: 30 0;
+    stroke-dashoffset: 0;
+  }
+
+  .opened .p2 {
+    stroke-dasharray: 0 27;
+    stroke-dashoffset: 4;
+  }
+
+  .burger .p4 {
+    stroke-dasharray: 30 200;
+    stroke-dashoffset: 150;
+  }
+
+  .burger .p5 {
+    stroke-dasharray: 40 200;
+    stroke-dashoffset: 170;
+  }
+
+  .opened .p4,
+  .opened .p5 {
+    stroke-dasharray: 35 124;
+    stroke-dashoffset: 160;
+  }
+
+  /*
+  .burger .p1,
+  .p3 {
+    stroke-dasharray: 125 33;
+    stroke-dashoffset: 126;
+  }
+
+  .opened .p1,
+  .p3 {
+    stroke-dasharray: 125 33;
+    stroke-dashoffset: 126;
+  }
+
+  .burger .p5,
+  .p4 {
+    stroke-dasharray: 55 115;
+    stroke-dashoffset: 100;
+  }
+
+  .burger .p2 {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 100;
+  }
+
+  .opened .p5 {
+    stroke-dasharray: 40 100;
+    stroke-dashoffset: 6;
+    stroke-width: 0.2em;
+    stroke: blue;
+  }
+
+  .opened .p4 {
+    stroke-dasharray: 40 100;
+    stroke-dashoffset: 6;
+    stroke-width: 0.2em;
+    stroke: blue;
+  }
+
+  .opened .p2 {
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: 0;
+    stroke-width: 0.2em;
+    stroke: blue;
+  }
+
+  */
+  /*
+  nav ul {
+    display: block;
+    text-transform: uppercase;
+    list-style-type: none;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+  }
+
+  nav li {
+    padding: 12px 24px;
+    display: inline-block;
+  }
+
+  nav li:hover {
+  text-decoration: underline;
+}
+
+nav li a:active {
+  font-weight: 800;
+}
+
+nav li a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#navbg {
+  width: 100%;
+  background-color: rgb(138, 138, 138);
+  height: 60px;
+  position: sticky;
+}
+  */
 
   #intro h1 {
     font-size: 3em;
