@@ -15,6 +15,7 @@ body {
 section:not(#intro) {
   padding: 50px 48px;
   line-height: 1.5em;
+  margin: ;
 }
 
 section#approach {
