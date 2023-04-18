@@ -32,8 +32,3 @@ function myDistance() {
 }
 
 setInterval(myDistance, 500);
-
-/*
-flex-flow: column-reverse wrap-reverse;
-align-content:space-between;
-justify-content:center;
