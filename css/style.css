@@ -4,6 +4,16 @@
     /* IE9 Compat Modes */ url("/fonts/Roboto-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
+/*
+refactor and @import Nav/header.css and a global.css 
++ main.css
++ etc.
+
+----------------
+
+there is a media query for dark mode that picks up the users setting automatically 
+*/
+
 body {
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
@@ -15,7 +25,6 @@ body {
 section:not(#intro) {
   padding: 50px 48px;
   line-height: 1.5em;
-  margin: ;
 }
 
 section#approach {
@@ -42,6 +51,17 @@ h2 {
 section#approach {
   color: white;
   text-align: center;
+}
+
+footer {
+  font-size: 0.7em;
+  padding: 24px;
+  background-color: rgb(100, 100, 100);
+  color: rgb(220, 220, 220);
+}
+
+footer a {
+  color: rgb(220, 220, 220);
 }
 
 button {
@@ -82,6 +102,7 @@ nav {
   width: 100%;
   position: fixed;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+  z-index: 3;
 }
 
 #navIcon {
@@ -104,6 +125,11 @@ nav li {
   display: inline-block;
 }
 
+nav li .active {
+  background-color: blue;
+  border: 1px solid;
+}
+
 nav li:hover {
   text-decoration: underline;
 }
@@ -120,9 +146,11 @@ nav li a {
 
 #navbg {
   width: 100%;
-  background-color: rgb(138, 138, 138);
+  background-color: rgba(255, 255, 255, 0.9);
   height: 60px;
   position: sticky;
+  z-index: 2;
+  top: 0px;
 }
 
 nav .burger {
@@ -240,7 +268,7 @@ div.card-image img#background {
 
 .small-card:hover {
   box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.18);
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(225, 225, 225);
 }
 
 /*-- big Cards for process*/
@@ -278,7 +306,7 @@ div.card-image img#background {
     display: none;
   }
 
-  nav.mobile > ul {
+  nav.mobile ul {
     background-color: white;
     width: 100%;
     margin-left: -84px;
@@ -302,6 +330,10 @@ div.card-image img#background {
     z-index: 2;
   }
 
+  #hero {
+    padding: 150px 24px;
+  }
+
   /* burger menu */
 
   nav .burger {
@@ -316,12 +348,9 @@ div.card-image img#background {
     display: unset;
   }
 
-  .opened {
-  }
-
   .line {
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: stroke-dasharray 600ms cubic-bezier(0.7, 0, 0.5, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.6, 0, 0.3, 1);
   }
 
   .burger .p1,
@@ -360,88 +389,7 @@ div.card-image img#background {
     stroke-dashoffset: 160;
   }
 
-  /*
-  .burger .p1,
-  .p3 {
-    stroke-dasharray: 125 33;
-    stroke-dashoffset: 126;
-  }
-
-  .opened .p1,
-  .p3 {
-    stroke-dasharray: 125 33;
-    stroke-dashoffset: 126;
-  }
-
-  .burger .p5,
-  .p4 {
-    stroke-dasharray: 55 115;
-    stroke-dashoffset: 100;
-  }
-
-  .burger .p2 {
-    stroke-dasharray: 200;
-    stroke-dashoffset: 100;
-  }
-
-  .opened .p5 {
-    stroke-dasharray: 40 100;
-    stroke-dashoffset: 6;
-    stroke-width: 0.2em;
-    stroke: blue;
-  }
-
-  .opened .p4 {
-    stroke-dasharray: 40 100;
-    stroke-dashoffset: 6;
-    stroke-width: 0.2em;
-    stroke: blue;
-  }
-
-  .opened .p2 {
-    stroke-dasharray: 0 100;
-    stroke-dashoffset: 0;
-    stroke-width: 0.2em;
-    stroke: blue;
-  }
-
-  */
-  /*
-  nav ul {
-    display: block;
-    text-transform: uppercase;
-    list-style-type: none;
-    margin: auto;
-    padding: auto;
-    text-align: center;
-  }
-
-  nav li {
-    padding: 12px 24px;
-    display: inline-block;
-  }
-
-  nav li:hover {
-  text-decoration: underline;
-}
-
-nav li a:active {
-  font-weight: 800;
-}
-
-nav li a {
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-#navbg {
-  width: 100%;
-  background-color: rgb(138, 138, 138);
-  height: 60px;
-  position: sticky;
-}
-  */
+  /*---- Other Content on mobile*/
 
   #intro h1 {
     font-size: 3em;
@@ -460,6 +408,7 @@ nav li a {
   .card-image {
     flex-direction: column;
   }
+
   /*----------------------*/
 
   .card {
@@ -475,6 +424,10 @@ nav li a {
   section#connect {
     padding-left: 200px;
     padding-right: 200px;
+  }
+
+  #hero {
+    padding-left: 200px;
   }
 }
 
@@ -508,11 +461,21 @@ nav li a {
   section#approach,
   section#clients,
   section#connect {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
-  .big-card img {
+  .big-card img,
+  .big-card .content {
     padding: 24px 0px 24px 0px;
     margin: unset;
+    min-width: 340px;
+  }
+
+  .card-container {
+    min-width: 300px;
+  }
+
+  #navIcon {
+    padding-left: 12px;
   }
 }
