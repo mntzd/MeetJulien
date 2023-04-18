@@ -12,29 +12,28 @@ let currentlyActive = "intro";
 
 function myDistance() {
   for (let i = 0; i < mySection.length; i++) {
-    let mySectionDistance = mySection[i].getBoundingClientRect().top;
-    //console.log("my distance " + mySection[i].id);
-    //console.log("my section distance " + mySectionDistance);
+    // loop through array of html sections
+    let mySectionDistance = mySection[i].getBoundingClientRect().top; // for each section calc distance to current scroll position
+
     if (mySectionDistance < 300 && mySectionDistance > -300) {
       if (currentlyActive != mySection[i].id) {
-        console.log(currentlyActive + "link");
+        // if distance is +-300px and not the same as the last active section
         document
-          .getElementById(currentlyActive + "link")
-          .classList.remove("active");
+          .getElementById(currentlyActive + "link") // in the nav, adress the section that was active before
+          .classList.remove("active"); // and remove the active-class
 
         document
-          .getElementById(mySection[i].id + "link")
+          .getElementById(mySection[i].id + "link") // in the nav, adress currently active section
           .classList.add("active");
-        currentlyActive = mySection[i].id;
+        currentlyActive = mySection[i].id; // put in current section as the most recent active
       }
-      //document.getElementById(currentlyActive).classList.remove("active");
-      //document.getElementById(mySection[i].id).classList.add("active");
     }
   }
-
-  /*  mySection.forEach(console.log(mySection[0].getBoundingClientRect().top));
-  document.getElementById("approach").getBoundingClientRect().top;
-  */
 }
 
 setInterval(myDistance, 500);
+
+/*
+flex-flow: column-reverse wrap-reverse;
+align-content:space-between;
+justify-content:center;

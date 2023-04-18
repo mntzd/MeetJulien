@@ -126,8 +126,9 @@ nav li {
 }
 
 nav li .active {
-  background-color: blue;
-  border: 1px solid;
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
 }
 
 nav li:hover {
@@ -315,6 +316,7 @@ div.card-image img#background {
     height: 1000px;
     display: block;
     animation-duration: 1s;
+    scroll-behavior: smooth;
   }
 
   nav li {
@@ -448,6 +450,10 @@ div.card-image img#background {
     width: unset;
     max-width: unset;
   }
+
+  .big-card img {
+    margin: unset;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -466,7 +472,7 @@ div.card-image img#background {
   }
   .big-card img,
   .big-card .content {
-    padding: 24px 0px 24px 0px;
+    padding: 24px 0px 0px 0px;
     margin: unset;
     min-width: 340px;
   }
