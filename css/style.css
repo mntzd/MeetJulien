@@ -4,12 +4,22 @@
     /* IE9 Compat Modes */ url("/fonts/Roboto-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
+/*
+refactor and @import Nav/header.css and a global.css 
++ main.css
++ etc.
+
+----------------
+
+there is a media query for dark mode that picks up the users setting automatically 
+*/
+
 body {
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Condensed", sans-serif;
   align-items: center;
-  min-width: 380px;
+  min-width: 375px;
 }
 
 section:not(#intro) {
@@ -41,6 +51,17 @@ h2 {
 section#approach {
   color: white;
   text-align: center;
+}
+
+footer {
+  font-size: 0.7em;
+  padding: 24px;
+  background-color: rgb(100, 100, 100);
+  color: rgb(220, 220, 220);
+}
+
+footer a {
+  color: rgb(220, 220, 220);
 }
 
 button {
@@ -81,31 +102,13 @@ nav {
   width: 100%;
   position: fixed;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+  z-index: 3;
 }
 
 #navIcon {
   float: left;
   display: flex;
   padding-left: 36px;
-}
-
-#burger {
-  width: 100px;
-  height: 40px;
-  position: absolute;
-  right: 12px;
-  display: none;
-  cursor: pointer;
-}
-
-#burger .p1,
-.p2,
-.p3,
-.p4,
-.p5,
-.p6 {
-  stroke-width: 0.1em;
-  stroke: black;
 }
 
 nav ul {
@@ -120,6 +123,12 @@ nav ul {
 nav li {
   padding: 12px 24px;
   display: inline-block;
+}
+
+nav li .active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
 }
 
 nav li:hover {
@@ -138,9 +147,15 @@ nav li a {
 
 #navbg {
   width: 100%;
-  background-color: rgb(138, 138, 138);
+  background-color: rgba(255, 255, 255, 0.9);
   height: 60px;
   position: sticky;
+  z-index: 2;
+  top: 0px;
+}
+
+nav .burger {
+  display: none;
 }
 
 /* 
@@ -254,7 +269,7 @@ div.card-image img#background {
 
 .small-card:hover {
   box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.18);
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(225, 225, 225);
 }
 
 /*-- big Cards for process*/
@@ -282,13 +297,101 @@ div.card-image img#background {
 */
 
 @media only screen and (max-width: 672px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+
   nav ul {
     display: none;
   }
 
-  #burger {
+  nav.mobile ul {
+    background-color: white;
+    width: 100%;
+    margin-left: -84px;
+    margin-top: -12px;
+    padding: 240px 48px;
+    height: 1000px;
+    display: block;
+    animation-duration: 1s;
+    scroll-behavior: smooth;
+  }
+
+  nav li {
+    padding: 12px 24px;
     display: block;
   }
+
+  nav button {
+    all: unset;
+  }
+
+  #navIcon {
+    z-index: 2;
+  }
+
+  #hero {
+    padding: 150px 24px;
+  }
+
+  /* burger menu */
+
+  nav .burger {
+    width: 100px;
+    background-color: transparent;
+    padding: unset;
+    margin: unset;
+    height: 40px;
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    display: unset;
+  }
+
+  .line {
+    transition: stroke-dasharray 600ms cubic-bezier(0.7, 0, 0.5, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.6, 0, 0.3, 1);
+  }
+
+  .burger .p1,
+  .p2,
+  .p3,
+  .p4,
+  .p5,
+  .p6 {
+    stroke-width: 0.1em;
+    stroke: black;
+  }
+
+  .burger .p2 {
+    stroke-dasharray: 30 0;
+    stroke-dashoffset: 0;
+  }
+
+  .opened .p2 {
+    stroke-dasharray: 0 27;
+    stroke-dashoffset: 4;
+  }
+
+  .burger .p4 {
+    stroke-dasharray: 30 200;
+    stroke-dashoffset: 150;
+  }
+
+  .burger .p5 {
+    stroke-dasharray: 40 200;
+    stroke-dashoffset: 170;
+  }
+
+  .opened .p4,
+  .opened .p5 {
+    stroke-dasharray: 35 124;
+    stroke-dashoffset: 160;
+  }
+
+  /*---- Other Content on mobile*/
 
   #intro h1 {
     font-size: 3em;
@@ -307,6 +410,7 @@ div.card-image img#background {
   .card-image {
     flex-direction: column;
   }
+
   /*----------------------*/
 
   .card {
@@ -322,6 +426,10 @@ div.card-image img#background {
   section#connect {
     padding-left: 200px;
     padding-right: 200px;
+  }
+
+  #hero {
+    padding-left: 200px;
   }
 }
 
@@ -342,6 +450,10 @@ div.card-image img#background {
     width: unset;
     max-width: unset;
   }
+
+  .big-card img {
+    margin: unset;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -355,11 +467,21 @@ div.card-image img#background {
   section#approach,
   section#clients,
   section#connect {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
-  .big-card img {
-    padding: 24px 0px 24px 0px;
+  .big-card img,
+  .big-card .content {
+    padding: 24px 0px 0px 0px;
     margin: unset;
+    min-width: 340px;
+  }
+
+  .card-container {
+    min-width: 300px;
+  }
+
+  #navIcon {
+    padding-left: 12px;
   }
 }
