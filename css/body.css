@@ -1,0 +1,15 @@
+main {
+  padding: 24px;
+}
+
+section {
+}
+
+section#intro {
+}
+
+#hero {
+  height: 80vh;
+  background-color: var(--secondary-color);
+  margin: 0px -24px;
+}

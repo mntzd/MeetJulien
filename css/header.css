@@ -1,0 +1,56 @@
+header {
+  background-color: var(--primary-color);
+  padding: 12px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  flex-direction: row;
+  border-bottom: 0.5px solid rgba(--font-color, 0.5);
+}
+
+#headerIcon {
+  position: absolute;
+  background-color: var(--background-color);
+  border-radius: 40px;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+}
+
+#headerIcon img {
+  height: 36px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 3em;
+  padding-inline-start: unset;
+}
+
+nav > ul > li {
+  text-transform: uppercase;
+  list-style-type: none;
+}
+
+nav > ul > li:hover {
+  text-decoration: underline;
+}
+
+nav > ul > li .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+nav > ul > li > a {
+  color: var(--light-font);
+  text-decoration: none;
+}
+
+.burger {
+  display: none;
+}
